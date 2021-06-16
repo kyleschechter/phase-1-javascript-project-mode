@@ -1,0 +1,298 @@
+body {
+    margin: 0;
+    font-family: monospace;
+  }
+  #main {
+    display: flex;
+    flex-direction: column;
+  }
+
+    #knicks-header {
+        display: flex;
+        
+        justify-content: center;
+        background: blue;
+        opacity: .8;
+        height: 7rem;
+        padding: 1rem;
+        margin: 0px;
+    }
+    #header-text {
+        font-size: 60px;
+        margin-top: auto;
+        margin-bottom: 0px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-style: oblique;
+        color: wheat;
+        border: black
+        
+    }
+    #knicks-img {
+        height: 6rem;
+        width: auto;
+    }
+    h2 {
+        font-size: 18px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    #get-started-p {
+        text-align: center;
+    }
+    #get-started {
+        position: relative;
+        background-color: #ff7b00;
+        border: none;
+        border-radius: 5px;
+        height: 3rem;
+        width: max-content;
+        color: whitesmoke;
+        font-size: 18px;
+        justify-self: center;
+    }
+    #get-started:hover {
+        background-color: whitesmoke;
+        border: #ff7b00 solid 1px;
+        color: #ff7b00;
+        cursor: pointer;
+      }
+      
+    .player-container {
+        padding: 1rem;
+        margin-top: 0%;
+        width: stretch;
+        height: auto;
+        display: none;
+        background: rgb(85, 139, 255);
+        opacity: .8;
+        text-align: center;
+    }
+    .choose-player {
+        width: 100%
+    }
+    .submit:hover {
+      cursor: pointer;
+    }
+    #player-image {
+      width: 200px;
+    }
+    .dropbtn {
+        background-color: orange;
+        width: 300px;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+      
+      /* Dropdown button on hover & focus */
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: rgb(255, 200, 98);
+    }
+      
+      /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+      
+      /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+      
+      /* Links inside the dropdown */
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+      
+      /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: #ddd}
+      
+      /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+    .show {display:block;}
+
+    #edit-cards {
+      display: inline-flex;
+    }
+
+    .card-container {
+        border: 1px solid black;
+        background-color: black;
+        width: 500px;
+        height: 700px;
+        margin-left: 350px;
+        margin-top: 70px;
+        margin-bottom: 35px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        box-shadow: -8px 9px 16px -3px gray;
+        /*background: #171314; */
+    }
+    .card-background {
+        height: 688px;
+        margin: -13px 5px 5px 5px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/cf/LeBron_James_crop.jpg;');
+        background-size: cover;
+  
+    }
+    .card-frame {
+      width: 100%;
+
+    }
+    .frame-header {
+      color: white;
+      padding-left: 25px;
+      height: 60px;
+    }
+    #player-position {
+      padding-top: 20px;
+      max-width: 50px;
+      background-color: rgb(0, 110, 255);
+      text-align: center;
+    }
+    #player-name {
+      color: black;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-top: 8px;
+      font-size: 20px;
+      font-stretch: extra-condensed;
+      font-family: cursive;
+    }
+    #player-num {
+      color: black;
+      font-size: 20px;
+      justify-content: space-evenly;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin-top: 15px;
+      margin-right: 10px;
+      background-color: coral;
+      background-size: contain;
+      padding: 5px;
+    }
+    .frame-footer {
+      display: inline-flexbox;
+      align-self: flex-end;
+      width: 230px;
+      margin-top: 520px;
+      margin-bottom: 20px;
+      text-align: center, bottom;
+      background-color: white;
+    }
+
+    /*Styles for edits section*/
+    #edits-container {
+      width: 400px;
+      align-self: center;
+      margin-left: 50px;
+      margin-right: 40px;
+    }
+    #edit-card-form {
+      display: flex;
+      align-content: center;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 25px;
+    }
+    .edit-dropdown {
+      display: flex;
+      color: rgb(69, 140, 248);
+      margin-left: 20px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      align-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: rgb(255, 187, 0);
+      border-radius: 20%;
+      border: 1px solid black;
+    }
+    .edit-dropdown select {
+      width: 80%;
+      height: 30px;
+      display: flex;
+    }
+    .edit-dropdown h2 {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+   
+    #sell-div {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      margin-left: 10px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+    #sell-button {
+      background-color: green;
+      border: none;
+      border-radius: 10px;
+      height: 3rem;
+      width: 100px;
+      color: whitesmoke;
+      font-size: 20px;
+    }
+    #sell-button:hover {
+      background-color: whitesmoke;
+      border: green solid 1px;
+      color: green;
+      cursor: pointer;
+    }
+    #auction-div {
+      display: flex;
+      align-content: center;
+      flex-direction: column;
+      margin: 30px 150px 20px 150px;
+      border: 3px solid rgb(7, 58, 0);
+      background-color: rgb(212, 255, 202);
+    }
+    #auction-head-div {
+      background-color: thistle;
+    }
+    h3 {
+      text-align: center;
+      font-weight: bolder;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: crimson;
+      background-size: 10px;
+      color: whitesmoke;
+    }
+    #auction-feed {
+      padding: 0%;
+      display: flex;
+      flex-direction: column;
+    }
+    #auction-feed li {
+      list-style: none;
+      display: flex;
+      align-self: center;
+      width: 80%;
+      margin-left: 10px;
+      background-color: #40fd39;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+

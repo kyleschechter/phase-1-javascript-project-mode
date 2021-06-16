@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset='UTF-8'/>
+  <title>Document</title>
+  <script src='index.js'></script>
+  <link rel='stylesheet' href='index.css'/>
+</head>
+<body>
+  <div id='main'>
+
+    <div id="knicks-header">
+        <h1 id='header-text'>My &nbsp; &nbsp;<img id='knicks-img' src='https://upload.wikimedia.org/wikipedia/en/thumb/2/25/New_York_Knicks_logo.svg/1920px-New_York_Knicks_logo.svg.png'/>&nbsp; Card!</h1>
+    </div>
+    
+    <h2 id='first-h2'>Customize your own New York Knicks trading card and then auction it off and we'll tell you how much your masterpiece is worth!</h2>
+    <p id='get-started-p'>
+        <button id='get-started'>Get Started!</button>
+    </p>
+        <div class="player-container">
+
+          <form class='choose-player'>
+            <label for="players">New York Knicks 2021 Roster: </label>
+            <select id="menu">
+              <option>04 Derrick Rose</option>
+              <option>30 Julius Randle</option>
+              <option>09 RJ Barrett</option>
+              <option>25 Reggie Bullock</option>
+              <option>18 Alec Burks</option>
+              <option>67 Taj Gibson</option>
+              <option>00 Jared Harper</option>
+              <option>20 Kevin Knox</option>
+              <option>03 Nerlens Noel</option>
+              <option>11 Frank Ntilikina</option>
+              <option>06 Elfrid Payton</option>
+              <option>14 Norvel Pelle</option>
+              <option>21 Theo Pinson</option>
+              <option>05 Immanuel Quickley</option>
+              <option>23 Mitchell Robinson</option>
+              <option>01 Obi Toppin</option>
+            </select> 
+            &nbsp; &nbsp;
+            <input
+              type="text"
+              name="image"
+              value=""
+              placeholder="Enter an image for your card..."
+              id='player-image'
+            />
+            <input
+              type="submit"
+              name="submit"
+              value="Add Player"
+              class="submit"
+              id='add-player-button'
+            />   
+          </form>
+        
+        </div>
+      
+    <div id='edit-cards'>
+
+         <div class="card-container">
+
+                <div class="card-background">
+              
+                    <div class="card-frame">
+
+                      <div class="frame-header">
+                        <h1 id="player-position">SF</h1>
+                      </div>
+
+
+                      <div class='frame-footer'>
+                        <h1 id='player-name'>Lebron James</h1>
+                        <p id='player-num'>#23</p>
+                      </div>
+
+                    </div>
+
+                </div>
+              
+         </div>
+                 
+         <div id="edits-container">
+
+            <div id='edit-card-form'>
+              <div class='edit-dropdown'>
+                <h2>Name Plate</h2>
+                <select id='name-plate-color'>
+                    <option>white</option>
+                    <option>black</option>
+                    <option>blue</option>
+                    <option>orange</option>
+                </select>
+              </div>
+              <div class='edit-dropdown'>
+                <h2>Name Plate Background</h2>
+                <select id='name-plate-background-color'>
+                    <option>white</option>
+                    <option>black</option>
+                    <option>blue</option>
+                    <option>orange</option>
+                </select>
+              </div>
+              <div class='edit-dropdown'>
+                <h2>Number</h2>
+                <select id='number-color'>
+                    <option>white</option>
+                    <option>black</option>
+                    <option>blue</option>
+                    <option>orange</option>
+                </select>
+              </div>
+              <div class='edit-dropdown'>
+                <h2>Number Background</h2>
+                <select id='number-background-color'>
+                    <option>white</option>
+                    <option>black</option>
+                    <option>blue</option>
+                    <option>orange</option>
+                </select>
+              </div>
+              <div class='edit-dropdown'>
+                <h2>Position Background</h2>
+                <select id='position-color'>
+                    <option>white</option>
+                    <option>black</option>
+                    <option>blue</option>
+                    <option>orange</option>
+                </select>
+              </div> 
+              <form id='sell-div'>
+                <input id='sell-button' type='submit' value='Sell'>
+              </form>   
+                
+            </div>
+        
+         </div>
+    
+    </div>
+    
+    <div id='auction-div'>
+      <div id='auction-head-div'>
+         <h3>Auction Feed</h3>
+      </div>
+      <ul id='auction-feed'>
+        <li>SebKopp92's Derrick Rose Card just sold for $250!</li>
+        <li>jong's Obi Toppin Card just sold for $78!</li>
+        <li>DionHoops3's Mitchell Robinson Card just sold for $111!</li>
+      </ul>
+    </div>
+    <!-- <div class="modal fade" id="sell-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Sold!</p>
+              <p id='sold-amount'>$20</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+     </div> -->
+
+
+
+  </div>
+
+</body>
+</html>
