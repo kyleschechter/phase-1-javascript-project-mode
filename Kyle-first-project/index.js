@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const getStartedButton = document.getElementById('get-started')
-  const buttonP = document.getElementById('get-started-p')
-  const playerSelect = document.querySelector('.player-container')
-  const h2 = document.querySelector('h2')
-  let newPlayer = false
-
   // Clicking on Get Started button drops down menu to select player
+
+  const getStartedButton = document.getElementById('get-started')
+  const buttonParagraph = document.getElementById('get-started-p')
+  const playerSelect = document.querySelector('.player-container')
+  const introHeader = document.querySelector('h2')
+  let newPlayer = false
 
   getStartedButton.addEventListener('click', (e) => {
     e.preventDefault()
@@ -13,16 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
     newPlayer = !newPlayer
     if (newPlayer) {
       playerSelect.style.display = 'block'
-      h2.style.display = 'none'
+      introHeader.style.display = 'none'
       getStartedButton.style.display = 'none'
-      buttonP.style.margin = '0px'
+      buttonParagraph.style.margin = '0px'
     } else {
       playerSelect.style.display = 'none'
-      h2.style.display = 'inline'
+      introHeader.style.display = 'inline'
     }
   })
 
-  // When a player is selected, their name and position will be filered into the card
+  // DELIVERABLE: When a player is selected in the dropdown menu, their name, position, number, and height/weight will be filered into the card
+
   const searchPlayerURL = 'https://www.balldontlie.io/api/v1/players?search='
   const position = document.querySelector('#player-position')
   const fullName = document.querySelector('#player-name')
@@ -35,10 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(`${searchPlayerURL}${selectedPlayer.value.slice(3)}`)
       .then(resp => resp.json())
       .then(playerData => {
-        console.log(playerData)
         position.innerHTML = playerData.data[0].position
         fullName.innerHTML = playerData.data[0].first_name + ' ' + playerData.data[0].last_name
         sellButton.className = fullName.innerHTML
+
+        // Some players in the database don't have height and weight available, so players without them only include their number in the number section of the card
         if (playerData.data[0].height_feet && playerData.data[0].height_inches && playerData.data[0].weight_pounds !== 'null') {
           number.innerHTML = `#${e.target.value.slice(0, 2)} - ${playerData.data[0].height_feet}'${playerData.data[0].height_inches}" - ${playerData.data[0].weight_pounds}lbs.`
         } else {
@@ -48,7 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
       })
   })
 
-  // When an image URL is submitted, the card background becomes that image
+  // DELIVERABLE: When an image URL is submitted, the card background becomes that image
+
   const addPlayerButton = document.querySelector('#add-player-button')
   const imgUrl = document.querySelector('#player-image')
   const cardBackground = document.querySelector('.card-background')
@@ -56,11 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault()
     cardBackground.style.background = `url("${imgUrl.value}")`
     cardBackground.style.backgroundSize = 'cover'
+    cardBackground.style.backgroundPositionX = 'center'
     cardBackground.style.backgroundRepeat = 'no-repeat'
     imgUrl.value = ''
   })
 
-  // Add event listeners to each edit dropdown that change the respective color of the card
+  // DELIVERABLE: Add event listeners to each edit dropdown that change the respective color of that section of the card
+
   const namePlateColor = document.querySelector('#name-plate-color')
   namePlateColor.addEventListener('change', (e) => {
     e.preventDefault()
@@ -89,6 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const positionColor = document.querySelector('#position-color')
   positionColor.addEventListener('change', (e) => {
     e.preventDefault()
+
+    // If color is set to white, text color is set to black so that they don't overlap
     if (e.target.value === 'white') {
       position.style.background = `${e.target.value}`
       position.style.color = 'black'
@@ -98,22 +105,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  // Fetch auction feed on refresh to persist all exisitng feed items
+  // DELIVERABLE: Fetch auction feed on refresh to persist all exisitng feed items
+
   const auctionFeed = document.querySelector('#auction-feed')
-  const bestSellers = document.querySelector('#best-sellers')
+  const bestSellers = document.querySelector('#best-sellers-list')
   fetch('http://localhost:3000/auction')
     .then(resp => resp.json())
     .then(feedData => {
+      // Post each sale to the feed
       feedData.forEach(sale => {
-        const newSale = document.createElement('li')
-        newSale.innerHTML = sale.feed
-        auctionFeed.append(newSale)
+        const saleListItem = document.createElement('li')
+        saleListItem.innerHTML = sale.feed
+        auctionFeed.append(saleListItem)
       })
+
+      // Organize and sort all of the sale values into an array in decending order
       const salePriceArray = feedData.map(sale => {
         return sale.value
       })
       const sortedPriceArray = salePriceArray.sort((a, b) => b - a)
 
+      // Grab the top 3 sale values, then find the user they are attached to and filter the user's sale into the leaderboard
       sortedPriceArray.slice(0, 3).forEach(price => {
         const topUserListItem = document.createElement('li')
         const topUser = feedData.find(userObj => userObj.value === price)
@@ -122,10 +134,13 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
 
-  // Add an event listener to sell button that will post the sale to the feed
+  // DELIVERABLE: Add an event listener to sell button that will post the new sale to the feed
+
   sellButton.addEventListener('submit', (e) => {
     e.preventDefault()
     const userName = document.querySelector('#new-user-input')
+
+    // Event listener only works if a User Name is provided
     if (userName.value === '') {
       window.alert('You forgot a User Name silly!')
     } else {
@@ -146,12 +161,28 @@ document.addEventListener('DOMContentLoaded', () => {
       fetch('http://localhost:3000/auction', configObj)
         .then(resp => resp.json())
         .then(data => {
-          console.log(data)
-          const newSale = document.createElement('li')
-          newSale.innerHTML = data.feed
+          const saleListItem = document.createElement('li')
+          saleListItem.innerHTML = data.feed
+
+          // Set a timer to wait 1.5 seconds after clicking Sell button before alerting the user that the card was sold and appending the sale post to the feed
           setTimeout(function () {
             window.alert(`SOLD! $${randomNumber}.00`)
-            auctionFeed.append(newSale)
+            auctionFeed.append(saleListItem)
+
+            // Reset all the card styles to prompt user to make another card
+            cardBackground.style.background = 'rgb(215, 215, 215)'
+
+            fullName.innerHTML = 'Try Again?'
+            fullName.style.color = 'black'
+            frameFooter.style.background = 'white'
+
+            number.innerHTML = 'Pick a new player!'
+            number.style.color = 'black'
+            number.style.background = 'orange'
+
+            position.innerHTML = '?'
+            position.style.color = 'white'
+            position.style.background = 'blue'
           }, 1500)
           userName.value = ''
         })

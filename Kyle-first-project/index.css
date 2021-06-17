@@ -2,13 +2,15 @@ body {
     margin: 0;
     font-family: monospace;
   }
-  
+
   #main {
     display: flex;
     flex-direction: column;
     background: url('https://image.freepik.com/free-vector/hardwood-maple-basketball-court-floor_64749-1768.jpg');
     background-attachment: scroll;
   }
+
+/* Page head styles */
 
     #knicks-header {
         display: flex;
@@ -67,7 +69,9 @@ body {
         color: #ff7b00;
         cursor: pointer;
       }
-      
+
+ /* New player submission section*/  
+
     .player-container {
         padding: 1rem;
         margin-top: 0%;
@@ -95,6 +99,8 @@ body {
       display: inline-flex;
     }
 
+/* Trading card design */
+
     .card-container {
         border: 1px solid black;
         background-color: black;
@@ -106,7 +112,6 @@ body {
         border-radius: 10px;
         box-sizing: border-box;
         box-shadow: -8px 9px 16px -3px gray;
-        /*background: #171314; */
     }
     .card-background {
         height: 688px;
@@ -118,12 +123,14 @@ body {
         background-color: rgb(255, 255, 255);
         background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/cf/LeBron_James_crop.jpg;');
         background-size: cover;
-  
     }
     .card-frame {
       width: 100%;
 
     }
+
+    /* Card details (name, number, background colors */
+
     .frame-header {
       color: white;
       padding-left: 25px;
@@ -165,7 +172,8 @@ body {
       background-color: white;
     }
 
-    /*Styles for edits section*/
+    /* Styles for edits section */
+
     #edits-container {
       width: 400px;
       align-self: center;
@@ -203,6 +211,8 @@ body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
    
+    /* Sell button */
+
     #sell-div {
       display: flex;
       flex-direction: column;
@@ -231,6 +241,9 @@ body {
       color: green;
       cursor: pointer;
     }
+
+    /* Auction feed */
+
     #auction-div {
       display: flex;
       align-content: center;
@@ -247,6 +260,7 @@ body {
     #auction-head-div h3 {
       text-align: center;
       font-weight: bolder;
+      font-size: 20px;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       width: 100%;
       padding-top: 10px;
@@ -275,7 +289,7 @@ body {
     #auction-body {
       display: flex;
     }
-    #best-sellers {
+    #best-sellers-list {
       display: flex;
       width: 45%;
       height: 310px;
@@ -287,7 +301,7 @@ body {
       border-radius: 10px;
       border: 5px solid black;
     }
-    #best-sellers h3 {
+    #best-sellers-list h3 {
       text-align: center;
       align-self: center;
       width: 89%;
@@ -298,7 +312,7 @@ body {
       border-radius: 10px;
       border: 1px solid rgb(0, 29, 0);
     }
-    #best-sellers li {
+    #best-sellers-list li {
       text-align: center;
       width: fit-content;
       margin-bottom: 20px;
@@ -308,21 +322,20 @@ body {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       border-radius: 15px;
     }
-    #best-sellers > :nth-child(2) {
+
+    /* Color coding best seller backgrounds (gold, silver, bronze) */
+    #best-sellers-list > :nth-child(2) {
       background-color: gold;
       border: none;
       border-radius: 5px;
     }
-    #best-sellers > :nth-child(3) {
+    #best-sellers-list > :nth-child(3) {
       background-color: silver;
       border: none;
       border-radius: 5px;
     }
-    #best-sellers > :nth-child(4) {
+    #best-sellers-list > :nth-child(4) {
       background-color: rgb(190, 92, 0);
       border: none;
       border-radius: 5px;
     }
-
-
-

@@ -19,16 +19,22 @@
       "value": 111
     },
     {
-      "user": "kylesmiles",
-      "feed": "kylesmiles's Julius Randle card just sold for $771!",
-      "value": 771,
+      "user": "mvp",
+      "feed": "mvp's Julius Randle card just sold for $487!",
+      "value": 487,
       "id": 4
     },
     {
-      "user": "frankthetank",
-      "feed": "frankthetank's Frank Ntilikina card just sold for $95!",
-      "value": 95,
+      "user": "taj",
+      "feed": "taj's Taj Gibson card just sold for $946!",
+      "value": 946,
       "id": 5
+    },
+    {
+      "user": "gordo",
+      "feed": "gordo's Julius Randle card just sold for $679!",
+      "value": 679,
+      "id": 6
     }
   ]
 }
