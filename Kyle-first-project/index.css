@@ -54,7 +54,7 @@ body {
     #get-started {
         position: relative;
         background-color: #ff7b00;
-        border: 3px solid black;
+        border: 3px solid rgba(255, 102, 0, 0.445);
         border-radius: 5px;
         height: 3rem;
         width: max-content;
@@ -106,7 +106,7 @@ body {
         background-color: black;
         width: 500px;
         height: 700px;
-        margin-left: 350px;
+        margin-left: 390px;
         margin-top: 70px;
         margin-bottom: 35px;
         border-radius: 10px;
@@ -191,6 +191,7 @@ body {
     .edit-dropdown {
       display: flex;
       color: wheat;
+      width: 250px;
       margin-left: 20px;
       margin-top: 10px;
       margin-bottom: 10px;
@@ -200,10 +201,10 @@ body {
       flex-direction: column;
       background-color: rgb(85, 139, 255);
       border-radius: 8px;
-      border: 1px solid black;
+      border: 1px solid rgba(0, 174, 255, 0.664);
     }
     .edit-dropdown select {
-      width: 80%;
+      width: 50%;
       height: 30px;
       display: flex;
     }
@@ -217,17 +218,17 @@ body {
       display: flex;
       flex-direction: column;
       align-content: center;
-      margin-left: 10px;
+      margin-left: 0;
       margin-top: 30px;
       margin-bottom: 20px;
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-left: 0px;
+      padding-right: 95px;
     }
     
     #sell-button {
       align-self: center;
       background-color: green;
-      border: 3px solid black;
+      border: 3px solid rgba(21, 255, 0, 0.308);
       border-radius: 10px;
       height: 3rem;
       width: 100px;
@@ -249,7 +250,7 @@ body {
       align-content: center;
       flex-direction: column;
       margin: 30px 150px 20px 150px;
-      border: 2px solid black;
+      border: 2px solid rgba(255, 166, 0, 0.651);
       border-radius: 8px;
       background-color: rgb(212, 255, 202);
     }

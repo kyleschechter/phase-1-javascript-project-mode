@@ -67,31 +67,40 @@ document.addEventListener('DOMContentLoaded', () => {
   // DELIVERABLE: Add event listeners to each edit dropdown that change the respective color of that section of the card
 
   const namePlateColor = document.querySelector('#name-plate-color')
+  namePlateColor.value = ''
   namePlateColor.addEventListener('change', (e) => {
     e.preventDefault()
     fullName.style.color = `${e.target.value}`
+    e.target.value = ''
   })
 
   const namePlateBackground = document.querySelector('#name-plate-background-color')
+  namePlateBackground.value = ''
   const frameFooter = document.querySelector('.frame-footer')
   namePlateBackground.addEventListener('change', (e) => {
     e.preventDefault()
     frameFooter.style.background = `${e.target.value}`
+    e.target.value = ''
   })
 
   const numColor = document.querySelector('#number-color')
+  numColor.value = ''
   numColor.addEventListener('change', (e) => {
     e.preventDefault()
     number.style.color = `${e.target.value}`
+    e.target.value = ''
   })
 
   const numBackgroundColor = document.querySelector('#number-background-color')
+  numBackgroundColor.value = ''
   numBackgroundColor.addEventListener('change', (e) => {
     e.preventDefault()
     number.style.background = `${e.target.value}`
+    e.target.value = ''
   })
 
   const positionColor = document.querySelector('#position-color')
+  positionColor.value = ''
   positionColor.addEventListener('change', (e) => {
     e.preventDefault()
 
@@ -103,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
       position.style.background = `${e.target.value}`
       position.style.color = 'white'
     }
+    e.target.value = ''
   })
 
   // DELIVERABLE: Fetch auction feed on refresh to persist all exisitng feed items
