@@ -2,9 +2,12 @@ body {
     margin: 0;
     font-family: monospace;
   }
+  
   #main {
     display: flex;
     flex-direction: column;
+    background: url('https://image.freepik.com/free-vector/hardwood-maple-basketball-court-floor_64749-1768.jpg');
+    background-attachment: scroll;
   }
 
     #knicks-header {
@@ -17,6 +20,7 @@ body {
         padding: 1rem;
         margin: 0px;
     }
+
     #header-text {
         font-size: 60px;
         margin-top: auto;
@@ -27,10 +31,12 @@ body {
         border: black
         
     }
+
     #knicks-img {
         height: 6rem;
         width: auto;
     }
+
     h2 {
         font-size: 18px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -38,13 +44,15 @@ body {
         padding-left: 20px;
         padding-right: 20px;
     }
+
     #get-started-p {
         text-align: center;
     }
+
     #get-started {
         position: relative;
         background-color: #ff7b00;
-        border: none;
+        border: 3px solid black;
         border-radius: 5px;
         height: 3rem;
         width: max-content;
@@ -52,6 +60,7 @@ body {
         font-size: 18px;
         justify-self: center;
     }
+
     #get-started:hover {
         background-color: whitesmoke;
         border: #ff7b00 solid 1px;
@@ -69,59 +78,18 @@ body {
         opacity: .8;
         text-align: center;
     }
+
     .choose-player {
         width: 100%
     }
+
     .submit:hover {
       cursor: pointer;
     }
+
     #player-image {
       width: 200px;
     }
-    .dropbtn {
-        background-color: orange;
-        width: 300px;
-        color: white;
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-    }
-      
-      /* Dropdown button on hover & focus */
-    .dropbtn:hover, .dropbtn:focus {
-        background-color: rgb(255, 200, 98);
-    }
-      
-      /* The container <div> - needed to position the dropdown content */
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-      
-      /* Dropdown Content (Hidden by Default) */
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-    }
-      
-      /* Links inside the dropdown */
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
-      
-      /* Change color of dropdown links on hover */
-    .dropdown-content a:hover {background-color: #ddd}
-      
-      /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-    .show {display:block;}
 
     #edit-cards {
       display: inline-flex;
@@ -209,20 +177,21 @@ body {
       align-content: center;
       flex-direction: column;
       justify-content: space-between;
-      margin-top: 25px;
+      margin-top: 50px;
+      margin-left: 20px;
     }
     .edit-dropdown {
       display: flex;
-      color: rgb(69, 140, 248);
+      color: wheat;
       margin-left: 20px;
-      margin-top: 20px;
+      margin-top: 10px;
       margin-bottom: 10px;
       padding-bottom: 10px;
       align-content: center;
       align-items: center;
       flex-direction: column;
-      background-color: rgb(255, 187, 0);
-      border-radius: 20%;
+      background-color: rgb(85, 139, 255);
+      border-radius: 8px;
       border: 1px solid black;
     }
     .edit-dropdown select {
@@ -235,19 +204,24 @@ body {
     }
    
     #sell-div {
-      background-color: white;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-content: center;
       margin-left: 10px;
       margin-top: 30px;
       margin-bottom: 20px;
+      padding-left: 30px;
+      padding-right: 30px;
     }
+    
     #sell-button {
+      align-self: center;
       background-color: green;
-      border: none;
+      border: 3px solid black;
       border-radius: 10px;
       height: 3rem;
       width: 100px;
+      margin-top: 25px;
       color: whitesmoke;
       font-size: 20px;
     }
@@ -262,26 +236,29 @@ body {
       align-content: center;
       flex-direction: column;
       margin: 30px 150px 20px 150px;
-      border: 3px solid rgb(7, 58, 0);
+      border: 2px solid black;
+      border-radius: 8px;
       background-color: rgb(212, 255, 202);
     }
     #auction-head-div {
-      background-color: thistle;
+      background-color: #ff7b00;
+      border-radius: 5px;
     }
-    h3 {
+    #auction-head-div h3 {
       text-align: center;
       font-weight: bolder;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       width: 100%;
       padding-top: 10px;
       padding-bottom: 10px;
-      background-color: crimson;
+      background-color: blue;
       background-size: 10px;
-      color: whitesmoke;
+      color: wheat;
     }
     #auction-feed {
       padding: 0%;
       display: flex;
+      width: 50%;
       flex-direction: column;
     }
     #auction-feed li {
@@ -295,4 +272,57 @@ body {
       padding: 20px;
       margin-bottom: 20px;
     }
+    #auction-body {
+      display: flex;
+    }
+    #best-sellers {
+      display: flex;
+      width: 45%;
+      height: 310px;
+      flex-direction: column;
+      list-style: none;
+      padding: 0;
+      margin-left: 10px;
+      background: url('https://image.freepik.com/free-vector/celebration-background-template_29865-215.jpg');
+      border-radius: 10px;
+      border: 5px solid black;
+    }
+    #best-sellers h3 {
+      text-align: center;
+      align-self: center;
+      width: 89%;
+      font-size: 30px;
+      color: wheat;
+      margin-top: 10px;
+      background-color: green;
+      border-radius: 10px;
+      border: 1px solid rgb(0, 29, 0);
+    }
+    #best-sellers li {
+      text-align: center;
+      width: fit-content;
+      margin-bottom: 20px;
+      padding: 10px;
+      align-self: center;
+      font-size: 30px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      border-radius: 15px;
+    }
+    #best-sellers > :nth-child(2) {
+      background-color: gold;
+      border: none;
+      border-radius: 5px;
+    }
+    #best-sellers > :nth-child(3) {
+      background-color: silver;
+      border: none;
+      border-radius: 5px;
+    }
+    #best-sellers > :nth-child(4) {
+      background-color: rgb(190, 92, 0);
+      border: none;
+      border-radius: 5px;
+    }
+
+
 

@@ -1,0 +1,34 @@
+{
+  "auction": [
+    {
+      "id": 1,
+      "user": "SebKopp92",
+      "feed": "SebKopp92's Derrick Rose Card just sold for $250!",
+      "value": 250
+    },
+    {
+      "id": 2,
+      "user": "DionHoops3",
+      "feed": "jong's Obi Toppin Card just sold for $78!",
+      "value": 78
+    },
+    {
+      "id": 3,
+      "user": "jong",
+      "feed": "DionHoops3's Mitchell Robinson Card just sold for $111!",
+      "value": 111
+    },
+    {
+      "user": "kylesmiles",
+      "feed": "kylesmiles's Julius Randle card just sold for $771!",
+      "value": 771,
+      "id": 4
+    },
+    {
+      "user": "frankthetank",
+      "feed": "frankthetank's Frank Ntilikina card just sold for $95!",
+      "value": 95,
+      "id": 5
+    }
+  ]
+}

@@ -98,30 +98,66 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  // Add an event listener to sell button that will post the sale to the feed
+  // Fetch auction feed on refresh to persist all exisitng feed items
   const auctionFeed = document.querySelector('#auction-feed')
+  const bestSellers = document.querySelector('#best-sellers')
+  fetch('http://localhost:3000/auction')
+    .then(resp => resp.json())
+    .then(feedData => {
+      feedData.forEach(sale => {
+        const newSale = document.createElement('li')
+        newSale.innerHTML = sale.feed
+        auctionFeed.append(newSale)
+      })
+      const salePriceArray = feedData.map(sale => {
+        return sale.value
+      })
+      const sortedPriceArray = salePriceArray.sort((a, b) => b - a)
+
+      sortedPriceArray.slice(0, 3).forEach(price => {
+        const topUserListItem = document.createElement('li')
+        const topUser = feedData.find(userObj => userObj.value === price)
+        topUserListItem.innerHTML = `${topUser.user} . . . $${topUser.value}`
+        bestSellers.append(topUserListItem)
+      })
+    })
+
+  // Add an event listener to sell button that will post the sale to the feed
   sellButton.addEventListener('submit', (e) => {
     e.preventDefault()
-    const newSale = document.createElement('li')
-    newSale.innerHTML = `NewUser1's ${sellButton.className} card just sold for $${Math.floor(Math.random() * 999)}!`
-    const cardObj = {
-      name: sellButton.className,
-      price: parseInt(newSale.innerHTML.slice(-4, -1))
-    }
-    if (isNaN(cardObj.price)) {
-      cardObj.price = parseInt(newSale.innerHTML.slice(-3, -1))
-      if (isNaN(cardObj.price)) {
-        cardObj.price = parseInt(newSale.innerHTML.slice(-2, -1))
+    const userName = document.querySelector('#new-user-input')
+    if (userName.value === '') {
+      window.alert('You forgot a User Name silly!')
+    } else {
+      const randomNumber = Math.floor(Math.random() * 999)
+      const newUserSale = `${userName.value}'s ${fullName.innerHTML} card just sold for $${randomNumber}!`
+      const configObj = {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          user: userName.value,
+          feed: newUserSale,
+          value: randomNumber
+        })
       }
+      fetch('http://localhost:3000/auction', configObj)
+        .then(resp => resp.json())
+        .then(data => {
+          console.log(data)
+          const newSale = document.createElement('li')
+          newSale.innerHTML = data.feed
+          setTimeout(function () {
+            window.alert(`SOLD! $${randomNumber}.00`)
+            auctionFeed.append(newSale)
+          }, 1500)
+          userName.value = ''
+        })
     }
-    setTimeout(function () {
-      window.alert('Sold!')
-      auctionFeed.append(newSale)
-    }, 2800)
-    console.log(cardObj.price)
   })
 })
-// ${Math.floor(Math.random() * 999)}
 
 // Create a header like Toy tale that says My "NY Knicks" Trading card with image of the knicks
 // "Customize your own New York Knicks trading card and then auction it off and we'll tell you how much your masterpiece is worth!"
