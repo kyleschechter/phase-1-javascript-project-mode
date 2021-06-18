@@ -65,6 +65,12 @@
       "feed": "a's Try Again? card just sold for $310!",
       "value": 310,
       "id": 11
+    },
+    {
+      "user": "bigmoney",
+      "feed": "bigmoney's Julius Randle card just sold for $579!",
+      "value": 579,
+      "id": 12
     }
   ]
 }
