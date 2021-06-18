@@ -54,7 +54,7 @@ body {
     #get-started {
         position: relative;
         background-color: #ff7b00;
-        border: 3px solid rgba(255, 102, 0, 0.445);
+        border: 3px solid rgba(255, 102, 0, 0.678);
         border-radius: 5px;
         height: 3rem;
         width: max-content;
