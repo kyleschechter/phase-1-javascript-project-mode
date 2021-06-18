@@ -6,12 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const playerSelect = document.querySelector('.player-container')
   const introHeader = document.querySelector('h2')
   let newPlayer = false
+  // let newPlayer = true;
 
   getStartedButton.addEventListener('click', (e) => {
     e.preventDefault()
     console.log('Clicked')
     newPlayer = !newPlayer
+    // Could we delete this?
     if (newPlayer) {
+      // Maybe if (!newPlayer) here?
       playerSelect.style.display = 'block'
       introHeader.style.display = 'none'
       getStartedButton.style.display = 'none'
@@ -38,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(playerData => {
         position.innerHTML = playerData.data[0].position
         fullName.innerHTML = playerData.data[0].first_name + ' ' + playerData.data[0].last_name
-        sellButton.className = fullName.innerHTML
+        sellButton.className = fullName.innerHTML // Have a look at the "HTML Element data attribute" <button id="sell" data-player-name="Labron" /
 
         // Some players in the database don't have height and weight available, so players without them only include their number in the number section of the card
         if (playerData.data[0].height_feet && playerData.data[0].height_inches && playerData.data[0].weight_pounds !== 'null') {
@@ -153,6 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listener only works if a User Name is provided
     if (userName.value === '') {
       window.alert('You forgot a User Name silly!')
+      // alert(...)
+      // global.alert(....)
     } else {
       const randomNumber = Math.floor(Math.random() * 999)
       const newUserSale = `${userName.value}'s ${fullName.innerHTML} card just sold for $${randomNumber}!`
@@ -175,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
           saleListItem.innerHTML = data.feed
 
           // Set a timer to wait 1.5 seconds after clicking Sell button before alerting the user that the card was sold and appending the sale post to the feed
-          setTimeout(function () {
+          setTimeout(function () { // Timers like this are set on window, and _might_ need to be unset.
             window.alert(`SOLD! $${randomNumber}.00`)
             auctionFeed.append(saleListItem)
 

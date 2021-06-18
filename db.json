@@ -71,6 +71,24 @@
       "feed": "bigmoney's Julius Randle card just sold for $579!",
       "value": 579,
       "id": 12
+    },
+    {
+      "user": "KyleSchechter",
+      "feed": "KyleSchechter's Julius Randle card just sold for $616!",
+      "value": 616,
+      "id": 13
+    },
+    {
+      "user": "kyle2",
+      "feed": "kyle2's Alec Burks card just sold for $65!",
+      "value": 65,
+      "id": 14
+    },
+    {
+      "user": "taj",
+      "feed": "taj's Taj Gibson card just sold for $480!",
+      "value": 480,
+      "id": 15
     }
   ]
 }
